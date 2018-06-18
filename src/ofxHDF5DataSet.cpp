@@ -78,6 +78,11 @@ namespace ofxHDF5
                 typeString = getTypeString(compType);
                 *h5_dataType = compType;
             }
+            else if (typeClass == H5T_STRING) {
+                H5::StrType strType = h5_dataSet->getStrType();
+                typeString = "string?";
+                *h5_dataType = strType;
+            }
             else {
                 ofLogError("DataSet::open") << "Unsupported type class " << typeClass;
             }

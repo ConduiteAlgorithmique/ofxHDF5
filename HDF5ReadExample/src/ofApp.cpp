@@ -7,7 +7,7 @@ void ofApp::setup()
     ofBackground(ofColor::black);
     ofSetLogLevel(OF_LOG_VERBOSE);
 
-    string filename = "snap_000.0.hdf5";
+    string filename = "test.h5";
     hdf5File.open(filename, true);
     cout << "File '" << filename << "' has " << hdf5File.getNumGroups() << " groups and " << hdf5File.getNumDataSets() << " datasets" << endl;
     for (int i = 0; i < hdf5File.getNumGroups(); ++i) {

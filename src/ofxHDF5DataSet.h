@@ -68,12 +68,12 @@ namespace ofxHDF5
         std::unique_ptr<H5::DataSpace> h5_dataSpace;
         std::unique_ptr<H5::DataType> h5_dataType;
 
-        int _numDimensions;
-		uint64_t *_dimensions;
+        long long unsigned int _numDimensions;
+        long long unsigned int *_dimensions;
 
-		uint64_t *_offset;
-		uint64_t *_count;
-		uint64_t *_stride;
-		uint64_t *_block;
+        long long unsigned int *_offset;
+        long long unsigned int *_count;
+        long long unsigned int *_stride;
+        long long unsigned int *_block;
     };
 }

@@ -9,6 +9,7 @@
 #include "ofxHDF5File.h"
 #include "ofUtils.h"
 #include "H5Cpp.h"
+#include "ofLog.h"
 
 using namespace std;
 
@@ -22,7 +23,7 @@ namespace ofxHDF5
     }
 
     //--------------------------------------------------------------
-    File::File(const string& filename, bool bReadOnly)
+    File::File(const std::filesystem::path& filename, bool bReadOnly)
     :h5_file(new H5::H5File)
     {
         open(filename, bReadOnly);
@@ -43,7 +44,7 @@ namespace ofxHDF5
     }
 
     //--------------------------------------------------------------
-    bool File::open(const string& filename, bool bReadOnly)
+    bool File::open(const std::filesystem::path& filename, bool bReadOnly)
     {
         close();
 

@@ -13,6 +13,7 @@
 #include "ofxHDF5Container.h"
 #include "ofxHDF5DataSet.h"
 #include "ofxHDF5Group.h"
+#include "ofFileUtils.h"
 
 namespace H5
 {
@@ -25,13 +26,13 @@ namespace ofxHDF5
     {
     public:
         File();
-        File(const std::string& filename, bool bReadOnly = false);
+        File(const std::filesystem::path& , bool bReadOnly = false);
         ~File();
 
-        bool open(const std::string& filename, bool bReadOnly = false);
+        bool open(const std::filesystem::path& , bool bReadOnly = false);
         virtual void close();
 
-        virtual GroupPtr loadGroup(const std::string& name);
+        virtual GroupPtr loadGroup(const std::string & name);
         virtual DataSetPtr loadDataSet(const std::string& name);
 
         virtual H5::CommonFG *getH5CommonPtr();
